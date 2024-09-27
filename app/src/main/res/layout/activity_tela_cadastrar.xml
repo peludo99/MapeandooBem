@@ -5,10 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TelaLoginActivity"
-
     android:background="@drawable/background"
-    >
+    tools:context=".TelaCadastrarActivity">
 
 
     <View
@@ -20,6 +18,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -65,35 +64,34 @@
     </ImageView>
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/bowlby_one"
-        android:text="Email:"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-
-
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/viewbase"
-        app:layout_constraintBottom_toTopOf="@id/inputemail"
         android:layout_marginLeft="58dp"
-        android:layout_marginTop="66dp"
+        android:layout_marginTop="46dp"
+        android:fontFamily="@font/bowlby_one"
 
 
         android:letterSpacing="0.090"
+        android:text="Usuário:"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@id/inputusuario"
 
 
-        ></TextView>
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        app:layout_constraintTop_toTopOf="@+id/viewbase"></TextView>
 
 
 
 
     <EditText
-        android:id="@+id/inputemail"
+        android:id="@+id/inputusuario"
         android:layout_width="300dp"
         android:layout_height="30dp"
-        android:hint="Digite seu Email"
+        android:hint="Digite seu Nome"
 
         android:background="@drawable/inputbackground"
 
@@ -106,7 +104,7 @@
         android:textSize="11sp"
         android:textAlignment="center"
 
-        android:layout_marginTop="87dp"
+        android:layout_marginTop="67dp"
         android:layout_marginLeft="43dp"
         android:layout_marginRight="43dp"
         >
@@ -114,66 +112,85 @@
     </EditText>
 
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="17dp"
+        android:fontFamily="@font/bowlby_one"
+        android:text="Email:"
+        android:textColor="@color/black"
+
+
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputusuario">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/inputemail"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:background="@drawable/inputbackground"
+        android:layout_marginBottom="37dp"
+
+        android:fontFamily="@font/bowlby_one"
+
+
+        android:hint="Digite seu Email"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        android:textStyle="bold"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="17dp"
+        android:fontFamily="@font/bowlby_one"
+        android:text="Senha:"
+        android:textColor="@color/black"
+
+
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputemail">
+
+    </TextView>
+
+
     <EditText
         android:id="@+id/inputsenha"
         android:layout_width="300dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="43dp"
-
-        android:layout_marginRight="43dp"
         android:background="@drawable/inputbackground"
+        android:layout_marginBottom="37dp"
 
         android:fontFamily="@font/bowlby_one"
-        android:hint="Digite sua senha"
+
+
+        android:hint="Digite seu Email"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="11sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputemail"
-        android:layout_marginTop="57dp">
+        app:layout_constraintTop_toBottomOf="@+id/textView6"></EditText>
 
 
-    </EditText>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="58dp"
-
-        android:layout_marginTop="37dp"
-        android:fontFamily="@font/bowlby_one"
-
-
-        android:letterSpacing="0.090"
-        android:text="Senha:"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-
-
-        app:layout_constraintBottom_toTopOf="@id/inputsenha"
-
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputemail"></TextView>
-
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/bowlby_one"
-        android:text="Ou continue com"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnentrar"
-        android:layout_marginTop="33dp"></TextView>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -183,7 +200,7 @@
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/btnentrar">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btngoogle"
@@ -226,7 +243,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bowlby_one"
-        android:text="Não possui uma conta?"
+        android:text="Já possui uma conta?"
         android:textColor="@color/black"
         android:textSize="14dp"
         android:textStyle="bold"
@@ -237,30 +254,27 @@
         android:layout_marginRight="80dp"/>
 
     <TextView
-        android:id="@+id/cadastrase"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="14dp"
         android:fontFamily="@font/bowlby_one"
-        android:text="Cadastre-se"
+        android:text="Faça login"
+        android:layout_marginLeft="6dp"
         android:textColor="#FF8DCB"
         android:textSize="14dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintStart_toEndOf="@id/textView3"
 
 
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 
-
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnentrar"
         android:layout_width="169dp"
         android:layout_height="36dp"
-        android:layout_marginTop="20dp"
 
 
         android:background="@drawable/background_btn"
@@ -271,18 +285,12 @@
 
         app:circularflow_radiusInDP="500dp"
 
+        android:layout_marginTop="37dp"
+
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputsenha" />
-
-
-
-
-
-
-
-
 
 
 
