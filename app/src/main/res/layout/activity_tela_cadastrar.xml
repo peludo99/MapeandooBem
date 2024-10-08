@@ -279,7 +279,7 @@
 
         android:background="@drawable/background_btn"
         android:fontFamily="@font/bowlby_one"
-        android:text="entrar"
+        android:text="Cadastrar"
         android:textColor="@color/white"
         android:textSize="14sp"
 
