@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mapeando0Bem</string>
+    <string name="title_activity_telainicial">TelainicialActivity</string>
 </resources>

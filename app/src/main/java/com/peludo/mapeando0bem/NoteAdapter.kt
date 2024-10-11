@@ -1,4 +1,4 @@
 package com.peludo.mapeando0bem
 
-class NoteAdapter {
+class NoteAdapter(val notes: ArrayList<Notemodel.Data>){
 }

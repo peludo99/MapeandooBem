@@ -18,16 +18,23 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.google.android.material.button.MaterialButton
 import org.json.JSONArray
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 
-
 class TelaCadastrarActivity : AppCompatActivity() {
 
 
     private val api by lazy { ApiRetrofit().endPoint }
+
+    private lateinit var inputUsuario: EditText
+    private lateinit var inputEmail: EditText
+    private lateinit var inputSenha: EditText
+    private lateinit var buttonCradastrar: AppCompatButton
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -38,18 +45,28 @@ class TelaCadastrarActivity : AppCompatActivity() {
             insets
         }
 
-        val btniniciar = findViewById<TextView>(R.id.login)
+        val btnlogin = findViewById<TextView>(R.id.login)
 
-        val btnCadastrar = findViewById<AppCompatButton>(R.id.btnentrar)
-
-        val nick:String = findViewById<EditText>(R.id.inputusuario).text.toString()
-        val email:String = findViewById<EditText>(R.id.inputemail).text.toString()
-        val senha:String = findViewById<EditText>(R.id.inputsenha).text.toString()
+        setupView()
+        setupListener()
 
 
 
+        btnlogin.setOnClickListener {
 
 
+            val intent = Intent(this, TelaLoginActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        // getNote()
+    }
+
+/*
+    private fun getNote(){
         api.data().enqueue(object : Callback<Notemodel> {
             override fun onResponse(
                 call: Call<Notemodel>,
@@ -73,15 +90,75 @@ class TelaCadastrarActivity : AppCompatActivity() {
             }
 
         })
-
-
-        btniniciar.setOnClickListener {
-
-
-            val intent = Intent(this, TelaLoginActivity::class.java)
-            startActivity(intent)
-        }
     }
+
+
+ */
+
+    private fun setupView(){
+        inputUsuario = findViewById(R.id.inputusuario)
+        inputEmail = findViewById(R.id.inputemail)
+        inputSenha = findViewById(R.id.inputsenha)
+        buttonCradastrar = findViewById(R.id.btncadastrar)
+    }
+
+    private fun setupListener(){
+
+        buttonCradastrar.setOnClickListener {
+
+            if (inputEmail.text.toString().isNotEmpty() && inputUsuario.text.toString().isNotEmpty() && inputSenha.text.toString().isNotEmpty() ){
+
+                Log.e("TelaCadastrarActivity",inputUsuario.text.toString())
+                Log.e("TelaCadastrarActivity",inputEmail.text.toString())
+                Log.e("TelaCadastrarActivity",inputSenha.text.toString())
+
+                api.create( inputEmail.text.toString(),inputSenha.text.toString(),inputUsuario.text.toString() )
+                    .enqueue(object : Callback<SubmitModel>{
+                        override fun onResponse(
+                            call: Call<SubmitModel>,
+                            response: retrofit2.Response<SubmitModel>
+                        ) {
+                            val submit = response.body()
+                            val msn = submit!!.messagem
+                            val erro = submit.cod
+
+
+                            if (response.isSuccessful){
+
+                                Toast.makeText(applicationContext, msn, Toast.LENGTH_SHORT).show()
+
+                            }
+                            else{
+
+                                Toast.makeText(applicationContext, erro , Toast.LENGTH_SHORT).show()
+
+                            }
+
+                        }
+
+                        override fun onFailure(call: Call<SubmitModel>, t: Throwable) {
+
+                        }
+
+                    })
+
+
+            }
+            else
+            {
+                Toast.makeText(applicationContext, "Preencha todos os Campos", Toast.LENGTH_SHORT).show()
+            }
+
+
+
+
+        }
+
+    }
+
+
+
+
 
 
 

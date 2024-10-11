@@ -119,6 +119,7 @@
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:layout_marginLeft="43dp"
+        android:inputType="textPassword"
 
         android:layout_marginRight="43dp"
         android:background="@drawable/inputbackground"

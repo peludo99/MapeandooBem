@@ -9,9 +9,12 @@
     tools:context=".TelaCadastrarActivity">
 
 
+
+
+
     <View
         android:id="@+id/viewbase"
-        android:layout_width="389dp"
+        android:layout_width="match_parent"
 
         android:layout_height="492dp"
         android:background="@drawable/basetelalogin"
@@ -176,11 +179,13 @@
         android:layout_height="30dp"
         android:background="@drawable/inputbackground"
         android:layout_marginBottom="37dp"
+        android:inputType="textPassword"
 
         android:fontFamily="@font/bowlby_one"
 
 
-        android:hint="Digite seu Email"
+
+        android:hint="Digite sua Senha"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="11sp"
@@ -200,7 +205,7 @@
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnentrar">
+        app:layout_constraintTop_toBottomOf="@+id/btncadastrar">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btngoogle"
@@ -272,7 +277,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnentrar"
+        android:id="@+id/btncadastrar"
         android:layout_width="169dp"
         android:layout_height="36dp"
 
