@@ -25,6 +25,8 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
 
+
+
         android:layout_height="500dp"
         android:background="@drawable/basetelalogin"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,6 +52,7 @@
     </View>
 
     <TextView
+        android:paddingLeft="10dp"
         android:id="@+id/boasvindasT"
 
         android:fontFamily="@font/bowlby_one"
@@ -71,6 +74,7 @@
     </TextView>
 
     <TextView
+        android:paddingLeft="10dp"
         android:id="@+id/username"
 
         android:layout_height="37dp"
@@ -94,6 +98,7 @@
 
     <TextView
         android:id="@+id/usernameT"
+        android:paddingLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="37dp"
         android:layout_marginLeft="37dp"
@@ -102,7 +107,7 @@
         android:fontFamily="@font/bowlby_one"
 
         android:textColor="#5D28B8"
-        android:textSize="11sp"
+        android:textSize="17sp"
         android:textStyle="bold"
         android:textAlignment="center"
 
@@ -110,6 +115,89 @@
         app:layout_constraintStart_toStartOf="parent">
 
     </TextView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnmap"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="50dp"
+        android:paddingLeft="10dp"
+
+
+        android:background="@drawable/background_btn_ciano"
+        android:fontFamily="@font/bowlby_one"
+        android:text=" buscar no mapa"
+        android:textColor="#27243C"
+        android:textSize="14sp"
+
+        app:circularflow_radiusInDP="500dp"
+        android:paddingRight="10dp"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:drawableStart="@drawable/icone_mapa_1"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btncasa"
+        android:layout_width="0dp"
+        android:paddingTop="4dp"
+
+        android:layout_height="40dp"
+
+        android:layout_marginHorizontal="70dp"
+        android:background="@drawable/background_btn_ciano"
+
+
+        android:drawableStart="@drawable/casa_icone_2"
+        android:fontFamily="@font/bowlby_one"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text=" buscar no mapa"
+        android:textColor="#27243C"
+
+        android:textSize="14sp"
+        android:layout_marginTop="17dp"
+
+
+        app:circularflow_radiusInDP="500dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnmap" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn"
+        android:layout_width="0dp"
+        android:paddingTop="4dp"
+
+        android:layout_height="40dp"
+        android:paddingRight="10dp"
+
+        android:layout_marginHorizontal="60dp"
+        android:background="@drawable/background_btn_rosaclaro"
+
+
+        android:drawableStart="@drawable/doepara_2"
+        android:fontFamily="@font/bowlby_one"
+        android:paddingLeft="10dp"
+        android:text=" buscar no mapa"
+        android:textColor="#27243C"
+
+        android:textSize="14sp"
+        android:layout_marginTop="17dp"
+
+
+        app:circularflow_radiusInDP="500dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btncasa" />
+
 
 
 
